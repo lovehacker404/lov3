@@ -49,7 +49,7 @@ def jalan(z):
 		time.sleep(0.001)
 
 def lisensi():
-	os.system('reset')
+	os.system('clear')
 	masuk()
 
 #Dev:love_hacker
@@ -239,22 +239,22 @@ def tokenz():
 			login()
 		else:
 			keluar()
-def masuk():
+def unikers():
 	os.system('clear')
 	print logo
 	print "\033[1;91m║--\033[1;91m> \033[1;95m1.\033[1;96m Login"
 	print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Login using token"
 	print "\033[1;93m║--\033[1;91m> \033[1;95m0.\033[1;96m Exit"
 	print "\033[1;95m║"
-	msuk = raw_input("\033[1;96m╚═\033[1;1mSlect option>\033[1;93m")
-	if msuk =="":
+	unikers = raw_input("\033[1;96m╚═\033[1;1mSlect option>\033[1;93m")
+	if unikers =="":
 		print"\033[1;91m[!] Wrong input"
 		keluar()
-	elif msuk =="1":
+	elif unikers =="1":
 		login()
-	elif msuk =="2":
+	elif unikers =="2":
 		tokenz()
-	elif msuk =="0":
+	elif unikers =="0":
 		keluar()
 	else:
 		print"\033[1;91m[!] Wrong input"
@@ -361,7 +361,7 @@ def menu():
 	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
 	print "	   \033[1;91m ID\033[1;91m:\033[1;91m"+id+"\x1b[1;95m              "
 	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
-	print "\033[1;92m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95mStart Cloning..."
+	print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m1.\x1b[1;96mStart Cloning..."
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m4.\033[1;96m WhatsApp Group BlackMafia"
@@ -370,25 +370,25 @@ def menu():
 
 
 def pilih():
-	unikers = raw_input("\n\033[1;91mChoose an Option>>> \033[1;95m")
-	if unikers =="":
+	hack = raw_input("\n\033[1;91mChoose an Option>>> \033[1;95m")
+	if hack =="":
 		print "\x1b[1;91mFill in correctly"
 		pilih()
-	elif unikers =="1":
+	elif hack =="1":
 		super()
-        elif unikers =="2":
+        elif hack =="2":
 		os.system('reset')
 		print logo
 		toket=open('login.txt','r').read()
 		print "\033[1;91m[+] \033[1;92mYour token\033[1;91m :\033[1;97m "+toket
 		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 		menu()
-        elif unikers =="3":
+        elif hack =="3":
                 tokenz()
-        elif unikers =='4':
+        elif hack =='4':
 	        os.system('xdg-open https://chat.whatsapp.com/FmuKakzK8oV3Rp6gpf9Xqr')
 	        menu()
-	elif unikers =="0":
+	elif hack =="0":
 		jalan('Token Removed')
 		os.system('rm -rf login.txt')
 		keluar()
