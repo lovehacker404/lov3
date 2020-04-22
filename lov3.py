@@ -523,13 +523,13 @@ def pilih_super():
 					berhasil.append(mail)
 		except KeyError:
 			pass
-	print 42*"\033[1;97m●"
-	print '\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mDone \033[1;97m....'
-	print"\033[1;91m[+] \033[1;92mTotal \033[1;91m: \033[1;97m"+str(len(berhasil))
-	print"\033[1;91m[+] \033[1;92mFile saved \033[1;91m:\033[1;97m out/GrupMailVuln.txt"
-	save.close()
-	raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-	menu_yahoo()
+		print 42*"\033[1;97m●"
+		print '\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mDone \033[1;97m....'
+		print"\033[1;91m[+] \033[1;92mTotal \033[1;91m: \033[1;97m"+str(len(berhasil))
+		print"\033[1;91m[+] \033[1;92mFile saved \033[1;91m:\033[1;97m out/GrupMailVuln.txt"
+		save.close()
+		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
+		menu_yahoo()
 	elif peak =="0":
 		menu()
 	else:
