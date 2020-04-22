@@ -287,13 +287,13 @@ def login():
                 jalan(' \033[1;91m────────╚═╬╝╔╬╬╗╚╬═╝────────')
                 jalan(' \033[1;91m──────────╚═╬╝╚╬═╝──────────')
                 jalan(' \033[1;91m────────────╚══╝────────────')
-	        jalan(' \033[1;93mWarning: \033[1;95mDo Not Use Your Personal Account' )
-	        jalan(' \033[1;93mWarning: \033[1;95mUse a New Account To Login' )
-	        jalan(' \033[1;93mWarning: \033[1;95mTermux  All version Work✅' )
+	        jalan(' \033[1;93mWarning: \033[1;95mGet Access Token App install Old Version v 2.1' )
+	        jalan(' \033[1;93mWarning: \033[1;95mFacebook login Old&New Acount No Checkpoint Copy Token' )
+	        jalan(' \033[1;93mWarning: \033[1;95mTermux  All version Work✅ Token paste 👇' )
 	        print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•"
-	        print('	   \033[1;91m▬\x1b[1;95m.........LOGIN WITH FACEBOOK........\x1b[1;91m▬' )
+	        print('\033[1;91m▬\x1b[1;95m.....LOGIN WITH FACEBOOK Token....\x1b[1;91m▬' )
 	        print('	' )
-	toket = raw_input("\033[1;91m[?] \033[1;92mToken\033[1;91m : \033[1;97m")
+	toket = raw_input("\033[1;91m[?] \033[1;96mLogin Using Token\033[1;91m : \033[1;97m")
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
 		a = json.loads(otw.text)
@@ -391,7 +391,7 @@ def menu():
 	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
 	print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m1.\x1b[1;96mStart Cloning..."
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
-        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using token"
+        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using Another token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m4.\033[1;96m WhatsApp Group BlackMafia"
 	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mlogout            "
 	pilih()
