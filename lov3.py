@@ -280,7 +280,7 @@ def login():
 			zedd.close()
 			menu()
                 except KeyError:
-		print "\033[1;91m[!] Wrong"
+			print "\033[1;91m[!] Wrong"
 		e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
 		if e =="":
 			keluar()
