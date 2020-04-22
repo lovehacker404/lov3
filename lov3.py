@@ -48,6 +48,10 @@ def jalan(z):
 		sys.stdout.flush()
 		time.sleep(0.001)
 
+def lisensi():
+	os.system('reset')
+	masuk()
+
 #Dev:love_hacker
 ##### LOGO #####
 logo = """
@@ -215,7 +219,7 @@ while (loop == 'true'):
         os.system('xdg-open https://m.youtube.com/channel/UCRrRgcJjsnNm5Bi5ZenRGnw')
 ##### TOKEN #####
 def tokenz():
-	os.system('reset')
+	os.system('clear')
 	print logo
 	toket = raw_input("\033[1;91m[?] \033[1;92mToken\033[1;91m : \033[1;97m")
 	try:
@@ -235,72 +239,26 @@ def tokenz():
 			login()
 		else:
 			keluar()
-def menu():
+def masuk():
 	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		print"\x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		nama = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"\033[1;91mYour Account is on Checkpoint"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	except requests.exceptions.ConnectionError:
-		print"\x1b[1;91mThere is no internet connection"
+	print logo
+	print "\033[1;91m║--\033[1;91m> \033[1;95m1.\033[1;96m Login"
+	print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Login using token"
+	print "\033[1;93m║--\033[1;91m> \033[1;95m0.\033[1;96m Exit"
+	print "\033[1;95m║"
+	msuk = raw_input("\033[1;96m╚═\033[1;1mSlect option>\033[1;93m")
+	if msuk =="":
+		print"\033[1;91m[!] Wrong input"
 		keluar()
-	os.system("clear") #Dev:love_hacker
-	print logo
-	print logo
-	print "  \033[1;95m«----•◈••◈•----\033[1;91mLogged in User Info\033[1;95m----•◈••◈•-----»"
-	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
-	print "	   \033[1;91m ID\033[1;91m:\033[1;91m"+id+"\x1b[1;95m              "
-	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
-	print "\033[1;92m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95m login Facebook..."
-        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
-        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using token"
-        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m4.\033[1;96m WhatsApp Group BlackMafia"
-	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mlogout            "
-	pilih()
-
-
-def pilih():
-	unikers = raw_input("\n\033[1;91mChoose an Option>>> \033[1;95m")
-	if unikers =="":
-		print "\x1b[1;91mFill in correctly"
-		pilih()
-	elif unikers =="1":
-		super()
-        elif unikers =="2":
-		os.system('reset')
-		print logo
-		toket=open('login.txt','r').read()
-		print "\033[1;91m[+] \033[1;92mYour token\033[1;91m :\033[1;97m "+toket
-		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
-		menu()
-        elif unikers =="3":
-                tokenz()
-        elif unikers =='4':
-	        os.system('xdg-open https://chat.whatsapp.com/FmuKakzK8oV3Rp6gpf9Xqr')
-	        menu()
-	elif unikers =="0":
-		jalan('Token Removed')
-		os.system('rm -rf login.txt')
+	elif msuk =="1":
+		login()
+	elif msuk =="2":
+		tokenz()
+	elif msuk =="0":
 		keluar()
 	else:
-		print "\x1b[1;91mFill in correctly"
-		pilih()
-
+		print"\033[1;91m[!] Wrong input"
+		keluar()
 
 def login():
 	os.system('clear')
