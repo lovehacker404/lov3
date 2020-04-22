@@ -496,12 +496,12 @@ def pilih_super():
 	        jalan('\033[1;91m[✺] \033[1;92mStart \033[1;97m...')
 	        print 42*"\033[1;97m═"
 	        for w in kimak['data']:
-		jml +=1
-		mpsh.append(jml)
-		id = w['id']
-		nama = w['name']
-		links = requests.get("https://graph.facebook.com/"+id+"?access_token="+toket)
-		z = json.loads(links.text)
+			jml +=1
+			mpsh.append(jml)
+			id = w['id']
+			nama = w['name']
+			links = requests.get("https://graph.facebook.com/"+id+"?access_token="+toket)
+			z = json.loads(links.text)
 		try:
 			mail = z['email']
 			yahoo = re.compile(r'@.*')
