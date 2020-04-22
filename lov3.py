@@ -268,8 +268,14 @@ def login():
 		print"\033[1;91m[!] Wrong input"
 		keluar()
 	        id = raw_input('\033[1;91m[+] \x1b[1;91mID/Login Facebook\x1b[1;95m: \x1b[1;95m')
-                e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
 	        pwd = raw_input('\033[1;91m[+] \x1b[1;91mPassword\x1b[1;95m: \x1b[1;95m')
+                e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
+		if e =="":
+			keluar()
+		elif e =="y":
+			login()
+		else:
+			keluar()
 	        tik()
                 os.system('reset')
 	        print logo
@@ -284,13 +290,6 @@ def login():
 			menu()
                 except KeyError:
 			print "\033[1;91m[!] Wrong"
-		e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
-		if e =="":
-			keluar()
-		elif e =="y":
-			login()
-		else:
-			keluar()
 		try:
 			br.open('https://m.facebook.com')
 		except mechanize.URLError:
