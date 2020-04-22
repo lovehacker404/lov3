@@ -385,7 +385,7 @@ def menu():
 	os.system("clear") #Dev:love_hacker
 	print logo
 	print logo
-	print "  \033[1;95m«----•◈••◈•----\033[1;91mLogged in User Info\033[1;95m----•◈••◈•-----»"
+	print "  \033[1;95m«----•◈••◈•---\033[1;91mLogged in User Info\033[1;95m----•◈••◈•-----»"
 	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
 	print "	   \033[1;91m ID\033[1;91m:\033[1;91m"+id+"\x1b[1;95m              "
 	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
