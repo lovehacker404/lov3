@@ -339,7 +339,7 @@ def menu():
 	print "\033[1;92m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95mStart Cloning..."
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
         print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using token"
-        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m WhatsApp Group BlackMafia"
+        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m4.\033[1;96m WhatsApp Group BlackMafia"
 	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mlogout            "
 	pilih()
 
@@ -358,7 +358,7 @@ def pilih():
 		print "\033[1;91m[+] \033[1;92mYour token\033[1;91m :\033[1;97m "+toket
 		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 		menu()
-        elif unikers =="2":
+        elif unikers =="3":
                 tokenz()
         elif unikers =='4':
 	        os.system('xdg-open https://chat.whatsapp.com/FmuKakzK8oV3Rp6gpf9Xqr')
