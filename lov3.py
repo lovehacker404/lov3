@@ -287,9 +287,9 @@ def login():
                 jalan(' \033[1;91m────────╚═╬╝╔╬╬╗╚╬═╝────────')
                 jalan(' \033[1;91m──────────╚═╬╝╚╬═╝──────────')
                 jalan(' \033[1;91m────────────╚══╝────────────')
-	        jalan(' \033[1;93mWarning: \033[1;95mGet Access Token App install Old Version v 2.1' )
-	        jalan(' \033[1;93mWarning: \033[1;95mFacebook login Old&New Acount No Checkpoint Copy Token' )
-	        jalan(' \033[1;93mWarning: \033[1;95mTermux  All version Work✅ Token paste 👇' )
+	        jalan(' \033[1;93m●: \033[1;95mGet Access Token App install Old Version v 2.1' )
+	        jalan(' \033[1;93m●: \033[1;95mFacebook login Old&New Acount No Checkpoint ' )
+	        jalan(' \033[1;93m●: \033[1;95mTermux  All version Work✅ Token paste 👇' )
 	        print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•"
 	        print('\033[1;91m▬\x1b[1;95m.....LOGIN WITH FACEBOOK Token....\x1b[1;91m▬' )
 	        print('	' )
