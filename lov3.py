@@ -138,34 +138,6 @@ listgrup = []
 vulnot = "\033[31mNot Vuln"
 vuln = "\033[32mVuln"
 
-##### LICENSE #####
-#=================#
-def lisensi():
-	os.system('reset')
-	masuk()
-
-##### Pilih Login #####
-def masuk():
-	os.system('reset')
-	print logo
-	print "\033[1;91m║--\033[1;91m> \033[1;95m1.\033[1;96m Login"
-	print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Login using token"
-	print "\033[1;93m║--\033[1;91m> \033[1;95m0.\033[1;96m Exit"
-	print "\033[1;95m║"
-	msuk = raw_input("\033[1;96m╚═\033[1;1mD \033[1;93m")
-	if msuk =="":
-		print"\033[1;91m[!] Wrong input"
-		keluar()
-	elif msuk =="1":
-		login()
-	elif msuk =="2":
-		tokenz()
-	elif msuk =="0":
-		keluar()
-	else:
-		print"\033[1;91m[!] Wrong input"
-		keluar()
-		
 os.system("clear")
 print  """
 \033[1;95m╔══╗╔╗──────╔╗─╔═╗╔═╗───╔═╗
@@ -242,6 +214,34 @@ while (loop == 'true'):
         print "\033[1;91mWrong Username"
         os.system('xdg-open https://m.youtube.com/channel/UCRrRgcJjsnNm5Bi5ZenRGnw')
 
+##### LICENSE #####
+#=================#
+def lisensi():
+	os.system('reset')
+	masuk()
+
+##### Pilih Login #####
+def masuk():
+	os.system('reset')
+	print logo
+	print "\033[1;91m║--\033[1;91m> \033[1;95m1.\033[1;96m Login"
+	print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Login using token"
+	print "\033[1;93m║--\033[1;91m> \033[1;95m0.\033[1;96m Exit"
+	print "\033[1;95m║"
+	msuk = raw_input("\033[1;96m╚═\033[1;1mSlect option\033[1;93m")
+	if msuk =="":
+		print"\033[1;91m[!] Wrong input"
+		keluar()
+	elif msuk =="1":
+		login()
+	elif msuk =="2":
+		tokenz()
+	elif msuk =="0":
+		keluar()
+	else:
+		print"\033[1;91m[!] Wrong input"
+		keluar()
+		
 def login():
 	os.system('clear')
 	try:
@@ -265,7 +265,7 @@ def login():
 	        print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•"
 	        print('	   \033[1;91m▬\x1b[1;95m.........LOGIN WITH FACEBOOK........\x1b[1;91m▬' )
 	        print('	' )
-	        id = raw_input('\033[1;91m[+] \x1b[1;91mID/Email\x1b[1;95m: \x1b[1;95m')
+	        id = raw_input('\033[1;91m[+] \x1b[1;91mID/Login Facebook\x1b[1;95m: \x1b[1;95m')
 	        pwd = raw_input('\033[1;91m[+] \x1b[1;91mPassword\x1b[1;95m: \x1b[1;95m')
 	        tik()
 		try:
