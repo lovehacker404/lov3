@@ -213,6 +213,28 @@ while (loop == 'true'):
     else:
         print "\033[1;91mWrong Username"
         os.system('xdg-open https://m.youtube.com/channel/UCRrRgcJjsnNm5Bi5ZenRGnw')
+##### TOKEN #####
+def tokenz():
+	os.system('reset')
+	print logo
+	toket = raw_input("\033[1;91m[?] \033[1;92mToken\033[1;91m : \033[1;97m")
+	try:
+		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		a = json.loads(otw.text)
+		nama = a['name']
+		zedd = open("login.txt", 'w')
+		zedd.write(toket)
+		zedd.close()
+		menu()
+	except KeyError:
+		print "\033[1;91m[!] Wrong"
+		e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
+		if e =="":
+			keluar()
+		elif e =="y":
+			login()
+		else:
+			keluar()
 def login():
 	os.system('clear')
 	try:
@@ -314,9 +336,10 @@ def menu():
 	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
 	print "	   \033[1;91m ID\033[1;91m:\033[1;91m"+id+"\x1b[1;95m              "
 	print "\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;95mBlackMafia\033[1;91m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
-	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95mStart Cloning..."
-        print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Show token"
-        print "\033[1;92m║--\033[1;91m> \033[1;95m3.\033[1;96m WhatsApp Group BlackMafia"
+	print "\033[1;92m-•◈•-\033[1;91m> \033[1;91m1.\x1b[1;95mStart Cloning..."
+        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m2.\033[1;96m Show token"
+        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m Login using token"
+        print "\033[1;92m-•◈•-\033[1;91m> \033[1;95m3.\033[1;96m WhatsApp Group BlackMafia"
 	print "\033[1;91m-•◈•-\033[1;91m> \033[1;91m0.\033[1;91mlogout            "
 	pilih()
 
@@ -335,7 +358,9 @@ def pilih():
 		print "\033[1;91m[+] \033[1;92mYour token\033[1;91m :\033[1;97m "+toket
 		raw_input("\n\033[1;91m[ \033[1;97mBack \033[1;91m]")
 		menu()
-        elif unikers =='3':
+        elif unikers =="2":
+                tokenz()
+        elif unikers =='4':
 	        os.system('xdg-open https://chat.whatsapp.com/FmuKakzK8oV3Rp6gpf9Xqr')
 	        menu()
 	elif unikers =="0":
