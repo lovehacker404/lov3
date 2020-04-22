@@ -543,7 +543,7 @@ def pilih_super():
 		print("\r\033[1;95mCloning\033[1;91m"+o),;sys.stdout.flush();time.sleep(0.00001)
 	print "\n\033[1;91m«--•◈••◈•---\x1b[1;95m•◈•Stop Process Press CTRL+Z•◈•\033[1;91m---•◈••◈•-»"
 	print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
-	jalan(' \033[1;91m.................\033[1;95mCloning Start..\033[1;91m............ ')
+	jalan(' \033[1;91m................\033[1;95mCloning Start..\033[1;91m............ ')
 	print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•"
 	
 			
