@@ -473,7 +473,7 @@ def pilih_super():
 		otw = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
 		a = json.loads(otw.text)
 		for i in z['data']:
-			id.append(i['id']:
+			id.append(i['id'])
 	elif peak =="0":
 		menu()
 	else:
