@@ -470,10 +470,10 @@ def pilih_super():
 			raw_input("\n\033[1;95m[\033[1;91mBack\033[1;95m]")
 			super()
 		print"\033[1;91mGetting IDs\033[1;97m..."
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
-		z = json.loads(r.text)
+		otw = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		a = json.loads(otw.text)
 		for i in z['data']:
-			id.append(i['id'])
+			id.append(i['id']:
 	elif peak =="0":
 		menu()
 	else:
